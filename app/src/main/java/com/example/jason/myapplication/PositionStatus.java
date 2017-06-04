@@ -56,6 +56,10 @@ public class PositionStatus {
         delY=(lonA-lonB)/0.00000900900901;
         double distance;
         distance= (double) Math.sqrt((delX * delX) + (delY * delY));
+        if(distance>5.0)//How long the distance will it update
+        {
+            lastPosition=currentPosition;
+        }
         return distance;
     }
     public void openGPS()
